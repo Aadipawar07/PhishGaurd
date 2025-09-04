@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PhishGuard Design System - Professional Cybersecurity Theme */
+
+@layer base {
+  :root {
+    /* Green Nature Color Palette */
+    --background: 120 55% 85%;
+    --foreground: 120 25% 15%;
+
+    --card: 120 50% 92%;
+    --card-foreground: 120 25% 15%;
+
+    --popover: 120 50% 92%;
+    --popover-foreground: 120 25% 15%;
+
+    /* Primary Green */
+    --primary: 120 35% 45%;
+    --primary-foreground: 120 55% 95%;
+    --primary-glow: 120 45% 60%;
+
+    --secondary: 120 45% 75%;
+    --secondary-foreground: 120 25% 15%;
+
+    --muted: 120 40% 80%;
+    --muted-foreground: 120 25% 35%;
+
+    --accent: 120 45% 60%;
+    --accent-foreground: 120 25% 15%;
+
+    /* Risk Level Colors */
+    --safe: 120 60% 50%;
+    --safe-foreground: 120 55% 95%;
+    --suspicious: 43 96% 56%;
+    --suspicious-foreground: 20 14.3% 4.1%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 35% 70%;
+    --input: 120 50% 88%;
+    --ring: 120 35% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(120 35% 45%), hsl(120 45% 60%));
+    --gradient-card: linear-gradient(145deg, hsl(120 50% 92%), hsl(120 45% 88%));
+    --gradient-hero: linear-gradient(135deg, hsl(120 55% 85%), hsl(120 50% 90%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(120 25% 25% / 0.1), 0 2px 4px -1px hsl(120 25% 25% / 0.05);
+    --shadow-glow: 0 0 20px hsl(120 35% 45% / 0.3);
+    --shadow-danger: 0 0 20px hsl(0 84% 60% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Mobile-first responsive design */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Card animations */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-glow;
+  }
+
+  .card-slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Progress ring */
+  .progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Mobile navigation */
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-card/80 backdrop-blur-lg border-t border-border;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
